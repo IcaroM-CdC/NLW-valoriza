@@ -13,6 +13,8 @@ export class CreateUserService {
 
     async execute({ name, email, password, admin }: UserRequest){
 
+        console.log(admin)
+
         const usersRepository = getCustomRepository(UsersRepositories)
 
         // Caso o email não esteja presente
@@ -27,6 +29,8 @@ export class CreateUserService {
         if (!admin){
             admin = false
         }
+
+        console.log(admin)
 
         // Caso o usuário ja exista retornamos um erro
         const userAlreadyExists = await usersRepository.findOne({

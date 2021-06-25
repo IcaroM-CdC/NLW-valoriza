@@ -10,5 +10,5 @@ export class UsersRepositories extends Repository<User> {}
 export class TagRepositories extends Repository<Tag>{}
 
 @EntityRepository(Compliment)
-export class ComplimentRepositories extends Repository<Compliment>{}
+export class ComplimentsRepositories extends Repository<Compliment>{}
 

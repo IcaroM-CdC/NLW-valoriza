@@ -3,7 +3,7 @@ import { UsersRepositories} from "../repositories/repositories";
 import { sign } from "jsonwebtoken"
 import { compare } from "bcryptjs"
 
-const md5hash = "ffdea0c3bed13906e0d6e9a59a4a6909"
+export const privateKey = "ffdea0c3bed13906e0d6e9a59a4a6909"
 
 
 interface AuthRequest {
@@ -36,11 +36,11 @@ export class AuthUserService {
             throw new Error("Email ou senha incorreto")
         }
 
-        // md5hash = o rato roeu a roupa do rei de roma
+        // privateKey = o rato roeu a roupa do rei de roma
 
         // gera o token
 
-        const token = sign({ email: userExists.email, name: userExists.name }, md5hash, {subject: userExists.id, expiresIn: "1d"})
+        const token = sign({ email: userExists.email, name: userExists.name }, privateKey, {subject: userExists.id, expiresIn: "1d"})
  
         return token
     }

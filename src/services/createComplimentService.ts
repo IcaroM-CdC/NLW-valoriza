@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm"
-import { ComplimentRepositories, UsersRepositories } from "../repositories/repositories"
+import { ComplimentsRepositories, UsersRepositories } from "../repositories/repositories"
 
 
 interface ComplimentRequest {
@@ -13,7 +13,7 @@ export class CreateComplimentService {
 
     async execute({ tag_id, user_sender, user_receiver, message }: ComplimentRequest){
 
-        const complimentRepositories = getCustomRepository(ComplimentRepositories)
+        const complimentRepositories = getCustomRepository(ComplimentsRepositories)
         const usersRepositories = getCustomRepository(UsersRepositories)
 
         const userReceiverExists = await usersRepositories.findOne(user_receiver)
