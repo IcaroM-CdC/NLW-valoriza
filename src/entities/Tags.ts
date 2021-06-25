@@ -1,4 +1,4 @@
-import {Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn} from "typeorm";
+import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 
 @Entity("tags")
@@ -21,6 +21,5 @@ export class Tag {
         if (!this.id){
             this.id = uuid();
         }
-
     }
 }
